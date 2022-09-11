@@ -15,13 +15,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class ScheduledTask {
+public class WeekTask {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long taskId;
 	
 	private String taskName;
-	private String frequency;
-	private String executions;
 }
