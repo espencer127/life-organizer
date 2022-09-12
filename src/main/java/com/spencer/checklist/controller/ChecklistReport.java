@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.spencer.checklist.entity.ScheduledTask;
 import com.spencer.checklist.repository.ScheduledTaskRepository;
 import com.spencer.checklist.repository.WeekTaskRepository;
+import com.spencer.checklist.service.DateService;
 
 @Controller
 public class ChecklistReport {
@@ -21,6 +22,9 @@ public class ChecklistReport {
 	
 	@Autowired
 	ScheduledTaskRepository scheduledTaskRepository;
+	
+	@Autowired
+	DateService dateService;
 	
 	@GetMapping("/checklist")
 	public String getChecklistReport(Model model) {
@@ -43,7 +47,7 @@ public class ChecklistReport {
 	    List<ScheduledTask> twiceMonthTasks = scheduledTasks.stream()
 	    		.filter(x -> x.getFrequency().toLowerCase().equals("twicemonthly"))
 	    		.collect(Collectors.toList());
-		
+		model.addAttribute("weekDates", dateService.getWeekDates());
 		model.addAttribute("weekTasks", weekTaskRepository.findAll());
 		model.addAttribute("newWeekTask", new ScheduledTask());
 		model.addAttribute("onceWeekTasks", onceWeekTasks);

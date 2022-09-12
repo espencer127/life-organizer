@@ -80,6 +80,13 @@
 		  <artifactId>spring-security-test</artifactId>
 		  <scope>test</scope>
 		</dependency>
+		
+		<!-- Dates -->
+		<dependency>
+		  <groupId>org.threeten</groupId>
+		  <artifactId>threeten-extra</artifactId>
+		  <version>1.7.1</version>
+		</dependency>
 
 
 	</dependencies>
