@@ -31,7 +31,7 @@
 					<div class="col-md-11" th:text="${task.taskName}"></div>
 					<div class="col-md-1"><a
 						th:href="@{/weekTask/ui/delete/{id}(id=${task.taskId})}">
-							<button type="button" class="btn btn-secondary">X</button>
+							<button type="button" class="btn btn-outline-secondary">X</button>
 					</a></div>
 				</div>
 
@@ -70,7 +70,9 @@
 						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${twiceWeekTask.taskId}, date=${weekDates.Sunday.date})}"
 									method="post">
 									<div class="input-group">
-										<input class="btn btn-primary" type="submit" th:value="${#strings.contains(twiceWeekTask.executions, weekDates.Sunday.formattedDate)} ? 'X' : 'O'">
+										<input class="btn" type="submit"
+										th:classappend="${#strings.contains(twiceWeekTask.executions, weekDates.Sunday.formattedDate)} ? 'btn-success task-executed' : 'task-not-executed btn-outline-secondary'" 
+										th:value="${#strings.contains(twiceWeekTask.executions, weekDates.Sunday.formattedDate)} ? 'X' : 'O'">
 									</div>
 								</form>
 							</div>
@@ -78,7 +80,9 @@
 						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${twiceWeekTask.taskId}, date=${weekDates.Monday.date})}"
 									method="post">
 									<div class="input-group">
-										<input class="btn btn-primary" type="submit" th:value="${#strings.contains(twiceWeekTask.executions, weekDates.Monday.formattedDate)} ? 'X' : 'O'">
+										<input class="btn" type="submit" 
+										th:classappend="${#strings.contains(twiceWeekTask.executions, weekDates.Monday.formattedDate)} ? 'btn-success task-executed' : 'task-not-executed btn-outline-secondary'" 
+										th:value="${#strings.contains(twiceWeekTask.executions, weekDates.Monday.formattedDate)} ? 'X' : 'O'">
 									</div>
 								</form>
 							</div>
@@ -86,7 +90,9 @@
 						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${twiceWeekTask.taskId}, date=${weekDates.Tuesday.date})}"
 									method="post">
 									<div class="input-group">
-										<input class="btn btn-primary" type="submit" th:value="${#strings.contains(twiceWeekTask.executions, weekDates.Tuesday.formattedDate)} ? 'X' : 'O'">
+										<input class="btn" type="submit" 
+										th:classappend="${#strings.contains(twiceWeekTask.executions, weekDates.Tuesday.formattedDate)} ? 'btn-success task-executed' : 'task-not-executed btn-outline-secondary'" 
+										th:value="${#strings.contains(twiceWeekTask.executions, weekDates.Tuesday.formattedDate)} ? 'X' : 'O'">
 									</div>
 								</form>
 							</div>
@@ -94,7 +100,9 @@
 						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${twiceWeekTask.taskId}, date=${weekDates.Wednesday.date})}"
 									method="post">
 									<div class="input-group">
-										<input class="btn btn-primary" type="submit" th:value="${#strings.contains(twiceWeekTask.executions, weekDates.Wednesday.formattedDate)} ? 'X' : 'O'">
+										<input class="btn" type="submit" 
+										th:classappend="${#strings.contains(twiceWeekTask.executions, weekDates.Wednesday.formattedDate)} ? 'btn-success task-executed' : 'task-not-executed btn-outline-secondary'" 
+										th:value="${#strings.contains(twiceWeekTask.executions, weekDates.Wednesday.formattedDate)} ? 'X' : 'O'">
 									</div>
 								</form>
 							</div>
@@ -102,7 +110,9 @@
 						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${twiceWeekTask.taskId}, date=${weekDates.Thursday.date})}"
 									method="post">
 									<div class="input-group">
-										<input class="btn btn-primary" type="submit" th:value="${#strings.contains(twiceWeekTask.executions, weekDates.Thursday.formattedDate)} ? 'X' : 'O'">
+										<input class="btn" type="submit" 
+										th:classappend="${#strings.contains(twiceWeekTask.executions, weekDates.Thursday.formattedDate)} ? 'btn-success task-executed' : 'task-not-executed btn-outline-secondary'" 
+										th:value="${#strings.contains(twiceWeekTask.executions, weekDates.Thursday.formattedDate)} ? 'X' : 'O'">
 									</div>
 								</form>
 							</div>
@@ -110,7 +120,9 @@
 						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${twiceWeekTask.taskId}, date=${weekDates.Friday.date})}"
 									method="post">
 									<div class="input-group">
-										<input class="btn btn-primary" type="submit" th:value="${#strings.contains(twiceWeekTask.executions, weekDates.Friday.formattedDate)} ? 'X' : 'O'">
+										<input class="btn" type="submit" 
+										th:classappend="${#strings.contains(twiceWeekTask.executions, weekDates.Friday.formattedDate)} ? 'btn-success task-executed' : 'task-not-executed btn-outline-secondary'" 
+										th:value="${#strings.contains(twiceWeekTask.executions, weekDates.Friday.formattedDate)} ? 'X' : 'O'">
 									</div>
 								</form>
 							</div>
@@ -118,13 +130,15 @@
 						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${twiceWeekTask.taskId}, date=${weekDates.Saturday.date})}"
 									method="post">
 									<div class="input-group">
-										<input class="btn btn-primary" type="submit" th:value="${#strings.contains(twiceWeekTask.executions, weekDates.Saturday.formattedDate)} ? 'X' : 'O'">
+										<input class="btn" type="submit" 
+										th:classappend="${#strings.contains(twiceWeekTask.executions, weekDates.Saturday.formattedDate)} ? 'btn-success task-executed' : 'task-not-executed btn-outline-secondary'" 
+										th:value="${#strings.contains(twiceWeekTask.executions, weekDates.Saturday.formattedDate)} ? 'X' : 'O'">
 									</div>
 								</form>
 							</div>
 							<div class="col-md-1"><a
 								th:href="@{/scheduledTask/ui/delete/{id}(id=${twiceWeekTask.taskId})}">
-									<button type="button" class="btn btn-secondary">X</button>
+									<button type="button" class="btn btn-outline-secondary">X</button>
 							</a></div>
 						</div>
 					</div>
@@ -137,16 +151,79 @@
 					<div class="col-md-11">
 						<div class="row" th:each="onceWeekTask : ${onceWeekTasks}">
 							<div class="col-md-4" th:text="${onceWeekTask.taskName}"></div>
-							<div class="col-md-1"></div>
-							<div class="col-md-1"></div>
-							<div class="col-md-1"></div>
-							<div class="col-md-1"></div>
-							<div class="col-md-1"></div>
-							<div class="col-md-1"></div>
-							<div class="col-md-1"></div>
+							<div class="col-md-1">
+						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${onceWeekTask.taskId}, date=${weekDates.Sunday.date})}"
+									method="post">
+									<div class="input-group">
+										<input class="btn" type="submit"
+										th:classappend="${#strings.contains(onceWeekTask.executions, weekDates.Sunday.formattedDate)} ? 'btn-success task-executed' : 'task-not-executed btn-outline-secondary'" 
+										th:value="${#strings.contains(onceWeekTask.executions, weekDates.Sunday.formattedDate)} ? 'X' : 'O'">
+									</div>
+								</form>
+							</div>
+							<div class="col-md-1">
+						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${onceWeekTask.taskId}, date=${weekDates.Monday.date})}"
+									method="post">
+									<div class="input-group">
+										<input class="btn" type="submit" 
+										th:classappend="${#strings.contains(onceWeekTask.executions, weekDates.Monday.formattedDate)} ? 'btn-success task-executed' : 'task-not-executed btn-outline-secondary'" 
+										th:value="${#strings.contains(onceWeekTask.executions, weekDates.Monday.formattedDate)} ? 'X' : 'O'">
+									</div>
+								</form>
+							</div>
+							<div class="col-md-1">
+						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${onceWeekTask.taskId}, date=${weekDates.Tuesday.date})}"
+									method="post">
+									<div class="input-group">
+										<input class="btn" type="submit" 
+										th:classappend="${#strings.contains(onceWeekTask.executions, weekDates.Tuesday.formattedDate)} ? 'btn-success task-executed' : 'task-not-executed btn-outline-secondary'" 
+										th:value="${#strings.contains(onceWeekTask.executions, weekDates.Tuesday.formattedDate)} ? 'X' : 'O'">
+									</div>
+								</form>
+							</div>
+							<div class="col-md-1">
+						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${onceWeekTask.taskId}, date=${weekDates.Wednesday.date})}"
+									method="post">
+									<div class="input-group">
+										<input class="btn" type="submit" 
+										th:classappend="${#strings.contains(onceWeekTask.executions, weekDates.Wednesday.formattedDate)} ? 'btn-success task-executed' : 'task-not-executed btn-outline-secondary'" 
+										th:value="${#strings.contains(onceWeekTask.executions, weekDates.Wednesday.formattedDate)} ? 'X' : 'O'">
+									</div>
+								</form>
+							</div>
+							<div class="col-md-1">
+						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${onceWeekTask.taskId}, date=${weekDates.Thursday.date})}"
+									method="post">
+									<div class="input-group">
+										<input class="btn" type="submit" 
+										th:classappend="${#strings.contains(onceWeekTask.executions, weekDates.Thursday.formattedDate)} ? 'btn-success task-executed' : 'task-not-executed btn-outline-secondary'" 
+										th:value="${#strings.contains(onceWeekTask.executions, weekDates.Thursday.formattedDate)} ? 'X' : 'O'">
+									</div>
+								</form>
+							</div>
+							<div class="col-md-1">
+						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${onceWeekTask.taskId}, date=${weekDates.Friday.date})}"
+									method="post">
+									<div class="input-group">
+										<input class="btn" type="submit" 
+										th:classappend="${#strings.contains(onceWeekTask.executions, weekDates.Friday.formattedDate)} ? 'btn-success task-executed' : 'task-not-executed btn-outline-secondary'" 
+										th:value="${#strings.contains(onceWeekTask.executions, weekDates.Friday.formattedDate)} ? 'X' : 'O'">
+									</div>
+								</form>
+							</div>
+							<div class="col-md-1">
+						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${onceWeekTask.taskId}, date=${weekDates.Saturday.date})}"
+									method="post">
+									<div class="input-group">
+										<input class="btn" type="submit" 
+										th:classappend="${#strings.contains(onceWeekTask.executions, weekDates.Saturday.formattedDate)} ? 'btn-success task-executed' : 'task-not-executed btn-outline-secondary'" 
+										th:value="${#strings.contains(onceWeekTask.executions, weekDates.Saturday.formattedDate)} ? 'X' : 'O'">
+									</div>
+								</form>
+							</div>
 							<div class="col-md-1"><a
 								th:href="@{/scheduledTask/ui/delete/{id}(id=${onceWeekTask.taskId})}">
-									<button type="button" class="btn btn-secondary">X</button>
+									<button type="button" class="btn btn-outline-secondary">X</button>
 							</a></div>
 						</div>
 					</div>
@@ -169,7 +246,7 @@
 							<div class="col-md-3"></div>
 							<div class="col-md-1"><a
 								th:href="@{/scheduledTask/ui/delete/{id}(id=${twiceMonthTask.taskId})}">
-									<button type="button" class="btn btn-secondary">X</button>
+									<button type="button" class="btn btn-outline-secondary">X</button>
 							</a></div>
 						</div>
 					</div>
@@ -185,7 +262,7 @@
 							<div class="col-md-7"></div>
 							<div class="col-md-1"><a
 								th:href="@{/scheduledTask/ui/delete/{id}(id=${onceMonthTask.taskId})}">
-									<button type="button" class="btn btn-secondary">X</button>
+									<button type="button" class="btn btn-outline-secondary">X</button>
 							</a></div>
 						</div>
 					</div>

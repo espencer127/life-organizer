@@ -23,3 +23,11 @@
 	text-transform: uppercase;
 	font-weight: bold;
 }
+
+.task-executed {
+	font-weight: bold;
+}
+
+.task-not-executed {
+	border-color: white;
+}
