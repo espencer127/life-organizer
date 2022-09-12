@@ -16,7 +16,7 @@ import com.spencer.checklist.model.Week;
 
 @Service
 public class DateService {
-	static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd");
+	static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE MM-dd");
 	
 	@Autowired
 	private Clock clock;

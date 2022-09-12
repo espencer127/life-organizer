@@ -41,3 +41,35 @@ Setup Clear DB -
 https://devcenter.heroku.com/articles/cleardb
 
 Clear DB will give you access to import dump files, but not to run create scripts. If you have a database locally, you can do a 'dump' of it. Then connect to your Clear DB with your DB tool (like MySQL Workbench). Then, import the dump files into that schema.
+
+You can probably do something like this -
+
+https://fuzzyblog.io/blog/heroku/2019/10/16/importing-your-local-mysql-database-into-heroku.html
+
+Lots of Thymeleaf help -
+
+https://www.baeldung.com/spring-boot-crud-thymeleaf
+
+Some more -
+
+https://www.baeldung.com/thymeleaf-in-spring-mvc
+
+
+Thymeleaf / CSS stuff -
+
+https://www.baeldung.com/spring-mvc-thymeleaf-conditional-css-classes
+(this is mostly correct but the curly brackets are in the wrong place actually)
+
+conditional checkboxes -
+
+https://stackoverflow.com/questions/71930265/how-to-make-a-checkbox-appear-checked-in-thymeleaf
+https://riptutorial.com/thymeleaf/example/32025/string-contains
+
+CSS checked class - unused but maybe helpful -
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/:checked
+https://stackoverflow.com/questions/44804022/checkbox-css-checked-styling
+
+Thymeleaf path vars - specifically, how to handle multiple path vars in a URL - 
+
+https://www.baeldung.com/spring-thymeleaf-path-variables

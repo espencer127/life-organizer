@@ -18,3 +18,8 @@
     display: inline-block;
     vertical-align: top; /* here */
 }
+
+.today-date {
+	text-transform: uppercase;
+	font-weight: bold;
+}
