@@ -18,18 +18,18 @@
 
 	<div class="container py-5">
 		<div class="row">
-			<div class="col-lg-5">
+			<div class="col-5">
 				<h1 class="h2">This Week!</h1>
 			</div>
 
-			<div class="col-lg-7">
+			<div class="col-7">
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-lg-5">
+			<div class="col-5">
 				<div class="row" th:each="task : ${weekTasks}">
-					<div class="col-md-11" th:text="${task.taskName}"></div>
-					<div class="col-md-1"><a
+					<div class="col-10" th:text="${task.taskName}"></div>
+					<div class="col-2"><a
 						th:href="@{/weekTask/ui/delete/{id}(id=${task.taskId})}">
 							<button type="button" class="btn btn-outline-secondary">X</button>
 					</a></div>
@@ -46,27 +46,27 @@
 				</form>
 			</div>
 
-			<div class="col-lg-7">
+			<div class="col-7">
 			
-				<div class="row">
-					<div class="col-md-1 verticaltext">
-						<h5 class="verticaltext_content">2x/Week</h5>
+				<div class="row time-box">
+					<div class="col-1 ng">
+						<h5>2x/Week</h5>
 					</div>
-					<div class="col-md-11">
+					<div class="col-11">
 						<div class="row">
-							<div class="col-md-4"></div>
-							<div class="col-md-1" th:classappend="${weekDates.Sunday.isToday} == true ? 'today-date'" th:text="${weekDates.Sunday.formattedDate}"></div>
-							<div class="col-md-1" th:classappend="${weekDates.Monday.isToday} == true ? 'today-date'" th:text="${weekDates.Monday.formattedDate}"></div>
-							<div class="col-md-1" th:classappend="${weekDates.Sunday.isToday} == true ? 'today-date'" th:text="${weekDates.Tuesday.formattedDate}"></div>
-							<div class="col-md-1" th:classappend="${weekDates.Sunday.isToday} == true ? 'today-date'" th:text="${weekDates.Wednesday.formattedDate}"></div>
-							<div class="col-md-1" th:classappend="${weekDates.Sunday.isToday} == true ? 'today-date'" th:text="${weekDates.Thursday.formattedDate}"></div>
-							<div class="col-md-1" th:classappend="${weekDates.Sunday.isToday} == true ? 'today-date'" th:text="${weekDates.Friday.formattedDate}"></div>
-							<div class="col-md-1" th:classappend="${weekDates.Sunday.isToday} == true ? 'today-date'" th:text="${weekDates.Saturday.formattedDate}"></div>
-							<div class="col-md-1"></div>
+							<div class="col-4"></div>
+							<div class="col-1" th:classappend="${weekDates.Sunday.isToday} == true ? 'today-date'" th:text="${weekDates.Sunday.formattedDate}"></div>
+							<div class="col-1" th:classappend="${weekDates.Monday.isToday} == true ? 'today-date'" th:text="${weekDates.Monday.formattedDate}"></div>
+							<div class="col-1" th:classappend="${weekDates.Sunday.isToday} == true ? 'today-date'" th:text="${weekDates.Tuesday.formattedDate}"></div>
+							<div class="col-1" th:classappend="${weekDates.Sunday.isToday} == true ? 'today-date'" th:text="${weekDates.Wednesday.formattedDate}"></div>
+							<div class="col-1" th:classappend="${weekDates.Sunday.isToday} == true ? 'today-date'" th:text="${weekDates.Thursday.formattedDate}"></div>
+							<div class="col-1" th:classappend="${weekDates.Sunday.isToday} == true ? 'today-date'" th:text="${weekDates.Friday.formattedDate}"></div>
+							<div class="col-1" th:classappend="${weekDates.Sunday.isToday} == true ? 'today-date'" th:text="${weekDates.Saturday.formattedDate}"></div>
+							<div class="col-1"></div>
 						</div>
 						<div class="row" th:each="twiceWeekTask : ${twiceWeekTasks}">
-							<div class="col-md-4" th:text="${twiceWeekTask.taskName}"></div>
-							<div class="col-md-1">
+							<div class="col-4" th:text="${twiceWeekTask.taskName}"></div>
+							<div class="col-1">
 						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${twiceWeekTask.taskId}, date=${weekDates.Sunday.date})}"
 									method="post">
 									<div class="input-group">
@@ -76,7 +76,7 @@
 									</div>
 								</form>
 							</div>
-							<div class="col-md-1">
+							<div class="col-1">
 						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${twiceWeekTask.taskId}, date=${weekDates.Monday.date})}"
 									method="post">
 									<div class="input-group">
@@ -86,7 +86,7 @@
 									</div>
 								</form>
 							</div>
-							<div class="col-md-1">
+							<div class="col-1">
 						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${twiceWeekTask.taskId}, date=${weekDates.Tuesday.date})}"
 									method="post">
 									<div class="input-group">
@@ -96,7 +96,7 @@
 									</div>
 								</form>
 							</div>
-							<div class="col-md-1">
+							<div class="col-1">
 						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${twiceWeekTask.taskId}, date=${weekDates.Wednesday.date})}"
 									method="post">
 									<div class="input-group">
@@ -106,7 +106,7 @@
 									</div>
 								</form>
 							</div>
-							<div class="col-md-1">
+							<div class="col-1">
 						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${twiceWeekTask.taskId}, date=${weekDates.Thursday.date})}"
 									method="post">
 									<div class="input-group">
@@ -116,7 +116,7 @@
 									</div>
 								</form>
 							</div>
-							<div class="col-md-1">
+							<div class="col-1">
 						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${twiceWeekTask.taskId}, date=${weekDates.Friday.date})}"
 									method="post">
 									<div class="input-group">
@@ -126,7 +126,7 @@
 									</div>
 								</form>
 							</div>
-							<div class="col-md-1">
+							<div class="col-1">
 						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${twiceWeekTask.taskId}, date=${weekDates.Saturday.date})}"
 									method="post">
 									<div class="input-group">
@@ -136,7 +136,7 @@
 									</div>
 								</form>
 							</div>
-							<div class="col-md-1"><a
+							<div class="col-1"><a
 								th:href="@{/scheduledTask/ui/delete/{id}(id=${twiceWeekTask.taskId})}">
 									<button type="button" class="btn btn-outline-secondary">X</button>
 							</a></div>
@@ -144,14 +144,14 @@
 					</div>
 				</div>
 
-				<div class="row">
-					<div class="col-md-1 verticaltext">
-						<h5 class="verticaltext_content">1x/Week</h5>
+				<div class="row time-box">
+					<div class="col-1 ng">
+						<h5>1x/Week</h5>
 					</div>
-					<div class="col-md-11">
+					<div class="col-11">
 						<div class="row" th:each="onceWeekTask : ${onceWeekTasks}">
-							<div class="col-md-4" th:text="${onceWeekTask.taskName}"></div>
-							<div class="col-md-1">
+							<div class="col-4" th:text="${onceWeekTask.taskName}"></div>
+							<div class="col-1">
 						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${onceWeekTask.taskId}, date=${weekDates.Sunday.date})}"
 									method="post">
 									<div class="input-group">
@@ -161,7 +161,7 @@
 									</div>
 								</form>
 							</div>
-							<div class="col-md-1">
+							<div class="col-1">
 						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${onceWeekTask.taskId}, date=${weekDates.Monday.date})}"
 									method="post">
 									<div class="input-group">
@@ -171,7 +171,7 @@
 									</div>
 								</form>
 							</div>
-							<div class="col-md-1">
+							<div class="col-1">
 						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${onceWeekTask.taskId}, date=${weekDates.Tuesday.date})}"
 									method="post">
 									<div class="input-group">
@@ -181,7 +181,7 @@
 									</div>
 								</form>
 							</div>
-							<div class="col-md-1">
+							<div class="col-1">
 						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${onceWeekTask.taskId}, date=${weekDates.Wednesday.date})}"
 									method="post">
 									<div class="input-group">
@@ -191,7 +191,7 @@
 									</div>
 								</form>
 							</div>
-							<div class="col-md-1">
+							<div class="col-1">
 						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${onceWeekTask.taskId}, date=${weekDates.Thursday.date})}"
 									method="post">
 									<div class="input-group">
@@ -201,7 +201,7 @@
 									</div>
 								</form>
 							</div>
-							<div class="col-md-1">
+							<div class="col-1">
 						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${onceWeekTask.taskId}, date=${weekDates.Friday.date})}"
 									method="post">
 									<div class="input-group">
@@ -211,7 +211,7 @@
 									</div>
 								</form>
 							</div>
-							<div class="col-md-1">
+							<div class="col-1">
 						  		<form action="#" th:action="@{/scheduledTask/ui/toggle/{id}/execution/{date}(id=${onceWeekTask.taskId}, date=${weekDates.Saturday.date})}"
 									method="post">
 									<div class="input-group">
@@ -221,7 +221,7 @@
 									</div>
 								</form>
 							</div>
-							<div class="col-md-1"><a
+							<div class="col-1"><a
 								th:href="@{/scheduledTask/ui/delete/{id}(id=${onceWeekTask.taskId})}">
 									<button type="button" class="btn btn-outline-secondary">X</button>
 							</a></div>
@@ -229,22 +229,22 @@
 					</div>
 				</div>
 
-				<div class="row">
-					<div class="col-md-1 verticaltext">
-						<h5 class="verticaltext_content">2x/Month</h5>
+				<div class="row time-box">
+					<div class="col-1 ng">
+						<h5>2x/Month</h5>
 					</div>
-					<div class="col-md-11">
+					<div class="col-11">
 						<div class="row">
-							<div class="col-md-4"></div>
-							<div class="col-md-4">Once</div>
-							<div class="col-md-3">Twice</div>
-							<div class="col-md-1"></div>
+							<div class="col-4"></div>
+							<div class="col-4">Once</div>
+							<div class="col-3">Twice</div>
+							<div class="col-1"></div>
 						</div>
 						<div class="row" th:each="twiceMonthTask : ${twiceMonthTasks}">
-							<div class="col-md-4" th:text="${twiceMonthTask.taskName}"></div>
-							<div class="col-md-4"></div>
-							<div class="col-md-3"></div>
-							<div class="col-md-1"><a
+							<div class="col-4" th:text="${twiceMonthTask.taskName}"></div>
+							<div class="col-4"></div>
+							<div class="col-3"></div>
+							<div class="col-1"><a
 								th:href="@{/scheduledTask/ui/delete/{id}(id=${twiceMonthTask.taskId})}">
 									<button type="button" class="btn btn-outline-secondary">X</button>
 							</a></div>
@@ -252,15 +252,15 @@
 					</div>
 				</div>
 
-				<div class="row">
-					<div class="col-md-1 verticaltext">
-						<h5 class="verticaltext_content">1x/Month</h5>
+				<div class="row time-box">
+					<div class="col-1 ng">
+						<h5>1x/Month</h5>
 					</div>
-					<div class="col-md-11">
+					<div class="col-11">
 						<div class="row" th:each="onceMonthTask : ${onceMonthTasks}">
-							<div class="col-md-4" th:text="${onceMonthTask.taskName}"></div>
-							<div class="col-md-7"></div>
-							<div class="col-md-1"><a
+							<div class="col-4" th:text="${onceMonthTask.taskName}"></div>
+							<div class="col-7"></div>
+							<div class="col-1"><a
 								th:href="@{/scheduledTask/ui/delete/{id}(id=${onceMonthTask.taskId})}">
 									<button type="button" class="btn btn-outline-secondary">X</button>
 							</a></div>
@@ -270,7 +270,7 @@
 				
 				
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-12">
 						<p>
 							<a href="/scheduledTask/ui/add-task"><button type="button"
 									class="btn btn-primary">Add Scheduled Task</button></a>

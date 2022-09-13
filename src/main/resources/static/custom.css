@@ -5,11 +5,7 @@
 }
 
 .verticaltext_content {
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    transform: rotate(-90deg);
     position: absolute;
     text-transform: uppercase;
 }
@@ -19,9 +15,19 @@
     vertical-align: top; /* here */
 }
 
+.ng {
+	writing-mode: vertical-lr;
+	text-orientation: upright;
+    text-transform: uppercase;
+}
+
 .today-date {
 	text-transform: uppercase;
 	font-weight: bold;
+}
+
+.time-box {
+	border: 1px solid black;
 }
 
 .task-executed {

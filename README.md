@@ -2,7 +2,28 @@
 
 Hoping this project can help me organize my life.
 
-## Setup
+### In Progress
+
+Things I'm still actively working on -
+
+* CSS improvements for scheduled tasks - fix alignment, etc
+* Tracking executions of monthly tasks
+
+### Next In Line
+
+To be taken on after 'in progress' tasks are done -
+
+* Embed the "Add Scheduled Task" inside the 'checklist' page; remove from separate page
+* "Big Chunk Projects" Section
+
+### Future Enhancements
+
+Things I'd like to implement -
+
+* Edit week tasks
+* "Clear All" for scheduled tasks (to clear out executions at the end of a week)
+
+### Setup
 
 Create a few MySql databases first. For instance, after running the following scripts, the db can be accessed at `jdbc:mysql://localhost:3306/db_example` -
 

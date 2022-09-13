@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -41,14 +40,23 @@ public class TaskController {
 		return taskRepository.findById(taskId).get();
 	}
 	
-	@PutMapping("/put")
+	@PostMapping("/create")
 	@ResponseBody
-	public List<Task> putTasks(@RequestBody Task taskInput) {
+	public List<Task> createTasks(@RequestBody Task taskInput) {
 		Task saveTask = Task.builder().projectName(taskInput.getProjectName())
 				.taskName(taskInput.getTaskName()).build();
 		taskRepository.save(saveTask);
 
 		return getTaskList();
+	}
+	
+	@PostMapping("/ui/create")
+	public String uiCreateTasks(Task taskInput) {
+		Task saveTask = Task.builder().projectName(taskInput.getProjectName())
+				.taskName(taskInput.getTaskName()).build();
+		taskRepository.save(saveTask);
+
+		return "redirect:/small-chunks";
 	}
 	
 	@PostMapping("/delete/{taskId}")
@@ -59,10 +67,9 @@ public class TaskController {
 	}
 	
 	@GetMapping("/ui/delete/{taskId}")
-	@ResponseBody
 	public String uiDeleteTask(@PathVariable Long taskId) {
 		taskRepository.deleteById(taskId);
-	    return "redirect:/index";
+	    return "redirect:/small-chunks";
 	}
 	
 	private List<Task> getTaskList() {
