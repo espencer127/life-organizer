@@ -6,7 +6,7 @@ Hoping this project can help me organize my life.
 
 Things I'm still actively working on -
 
-* CSS improvements for scheduled tasks - fix alignment, etc
+* CSS improvements for scheduled tasks - fix vertical text alignment, task rows flowing outside of columns, button styling, etc
 * Tracking executions of monthly tasks
 
 ### Next In Line
@@ -94,3 +94,7 @@ https://stackoverflow.com/questions/44804022/checkbox-css-checked-styling
 Thymeleaf path vars - specifically, how to handle multiple path vars in a URL - 
 
 https://www.baeldung.com/spring-thymeleaf-path-variables
+
+The most helpful CSS guide I could find about responsiveness:
+
+https://css-tricks.com/responsive-layouts-fewer-media-queries/
