@@ -8,9 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spencer.checklist.entity.ScheduledTask;
 import com.spencer.checklist.repository.ScheduledTaskRepository;
@@ -28,6 +25,11 @@ public class ChecklistReport {
 	
 	@Autowired
 	DateService dateService;
+	
+	@GetMapping()
+	public String mainForwarder() {
+		return "redirect:/checklist";
+	}
 	
 	@GetMapping("/checklist")
 	public String getChecklistReport(Model model) {
@@ -57,8 +59,6 @@ public class ChecklistReport {
 		model.addAttribute("twiceWeekTasks", twiceWeekTasks);
 		model.addAttribute("onceMonthTasks", onceMonthTasks);
 		model.addAttribute("twiceMonthTasks", twiceMonthTasks);
-	    
-	    
 	    
 		return "checklist";
 	}

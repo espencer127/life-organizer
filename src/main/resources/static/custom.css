@@ -48,8 +48,26 @@
 
 .container > div {
   height:100px;
-  background: lightgrey;
+  background: white;
   display: inline-table;
+}
+
+li.nav-item {
+    padding-top: 0.5rem;
+}
+
+.navbar-nav {
+    --bs-nav-link-padding-x: 0;
+    --bs-nav-link-padding-y: 0;
+    --bs-nav-link-font-weight: ;
+    --bs-nav-link-color: var(--bs-navbar-color);
+    --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
+    --bs-nav-link-disabled-color: var(--bs-navbar-disabled-color);
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
 }
 
 .time-box {
