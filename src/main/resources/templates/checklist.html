@@ -22,6 +22,10 @@
 	<div class="container">
 		<!-- Week Task column -->
 		<div>
+			<!-- Week Tasks -->
+			<div class="row">
+				<h3>Week Tasks</h3>
+			</div>
 			<div class="row" th:each="task : ${weekTasks}">
 				<div class="col-11" th:text="${task.taskName}"></div>
 				<div class="col-1"><a
@@ -39,6 +43,28 @@
 							type="submit" value="Add Task">
 					</div>
 				</form>
+			</div>
+			
+			<!-- Break -->
+			<div class="row">
+			</div>
+			
+			<!-- Week Small Chunks -->
+			
+			<div class="row">
+				<h3>Small Chunks</h3>
+			</div>
+			<div class="row">
+				<div class="row" th:each="task : ${thisWeeksSmallChunks}">
+					<div class="col-11" th:text="${task.taskName}"></div>
+					<div class="col-1">
+						<a
+							th:href="@{/task/ui/delete/{id}(id=${task.taskId})}">
+								<button type="button" class="btn btn-outline-secondary task-not-executed">X</button>
+						</a>
+					</div>
+				</div>
+				
 			</div>
 		</div>
 

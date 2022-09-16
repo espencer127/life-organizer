@@ -59,6 +59,27 @@ public class TaskController {
 		return "redirect:/small-chunks";
 	}
 	
+	/** If a small chunk is not already slated to be done this week, then mark it
+	 * as such. If a chunk IS slated to be done this week, then un-designate it.
+	 * 
+	 * @param id
+	 * @return
+	 */
+	@GetMapping("/ui/schedule/{id}")
+	public String uiScheduleTask(@PathVariable Long id) {
+		Task task = taskRepository.findById(id).get();
+		
+		if (task.getProjectName().toLowerCase().contains("thisweek")) {
+			task.setProjectName("");
+		} else {
+			task.setProjectName("thisweek");
+		}
+		
+		taskRepository.save(task);
+
+		return "redirect:/small-chunks";
+	}
+	
 	@PostMapping("/delete/{taskId}")
 	@ResponseBody
 	public List<Task> deleteTask(@PathVariable Long taskId) {
